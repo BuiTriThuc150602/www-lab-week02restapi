@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "Orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,8 @@ public class Order {
     private Customer customer;
     @OneToMany(mappedBy = "order")
     private List<OrderDetail> orderDetails;
+    @Column(name = "orderDate")
+
     private LocalDateTime orderDate;
 
     public Order() {

@@ -1,8 +1,10 @@
 package vn.edu.iuh.fit.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -13,12 +15,20 @@ import jakarta.persistence.Table;
 public class OrderDetail {
     @Id
     @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
     @Id
     @ManyToOne
+    @JoinColumn(name = "product_id",nullable = false)
     private Product product;
+    @Column(name = "quantity")
+
     private double quantity;
+    @Column(name = "price")
+
     private double price;
+    @Column(name = "note")
+
     private String note;
 
 

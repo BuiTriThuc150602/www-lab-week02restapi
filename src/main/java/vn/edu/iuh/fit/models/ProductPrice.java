@@ -1,21 +1,34 @@
 package vn.edu.iuh.fit.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.sql.Blob;
+import java.sql.Timestamp;
 import org.joda.time.LocalDateTime;
+import org.mariadb.jdbc.client.column.BlobColumn;
 
 @Entity
 @Table(name = "ProductPrice")
 public class ProductPrice {
 
   @Id
+  @Column(name = "price_date_time",columnDefinition = "Timestamp")
   private LocalDateTime price_date_time;
   @ManyToOne
+  @JoinColumn(name = "product_id", nullable = false)
+
   private Product product;
+  @Column(name = "price")
   private double price;
+  @Column(name = "note")
+
   private String note;
 
   public ProductPrice() {

@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,18 +16,30 @@ public class Product {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "product_id")
+
   private long product_id;
+  @Column(name = "product_name")
+
   private String name;
+  @Column(name = "unit")
+
   private String unit;
+  @Column(name = "status")
+
   private ProductStatus status;
+  @Column(name = "manufacturer")
+
   private String manufacturer;
+  @Column(name = "description")
+
   private String description;
 
-  @OneToMany
+  @OneToMany(mappedBy = "product")
   private List<OrderDetail> orderDetails;
-  @OneToMany
+  @OneToMany(mappedBy = "product")
   private List<ProductImage> productImageList;
-  @OneToMany
+  @OneToMany(mappedBy = "product")
   private List<ProductPrice> productPrices;
 
   public Product() {

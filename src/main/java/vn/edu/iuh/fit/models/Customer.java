@@ -12,9 +12,16 @@ public class Customer {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "cust_id")
   private long cust_id;
+  @Column(name = "cust_name")
   private String cust_name;
+  @Column(name = "email")
+
   private String email;
+  @Column(name = "phone")
+
   private String Phone;
+  @Column(name = "address")
+
   private String address;
   @OneToMany(mappedBy = "customer")
   private List<Order> order;
