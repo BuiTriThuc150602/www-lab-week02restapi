@@ -2,17 +2,32 @@ package vn.edu.iuh.fit.repositories;
 
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 public class Connection {
 
-  private EntityManager entityManager;
+  private final EntityManager entityManager;
+  private final EntityTransaction transaction;
+  private static Connection instance;
 
-  public static void main(String[] args) {
-    try{
-    Persistence.createEntityManagerFactory("www-lab-week02").createEntityManager();
-    }catch (Exception e){e.printStackTrace();}
+  private Connection() {
+    entityManager = Persistence.createEntityManagerFactory("www-lab-week02").createEntityManager();
+    transaction = entityManager.getTransaction();
   }
 
+  public static Connection getInstance() {
+    if (instance == null) {
+      instance = new Connection();
+    }
+    return instance;
+  }
 
+  public EntityManager getEntityManager() {
+    return entityManager;
+  }
+
+  public EntityTransaction getTransaction() {
+    return transaction;
+  }
 }
