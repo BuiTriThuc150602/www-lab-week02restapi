@@ -1,11 +1,11 @@
-package vn.edu.iuh.fit.repositories;
+package vn.edu.iuh.fit.backend.repositories;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import java.util.List;
 import java.util.Optional;
-import vn.edu.iuh.fit.enums.EmployeeStatus;
-import vn.edu.iuh.fit.models.Employee;
+import vn.edu.iuh.fit.backend.enums.EmployeeStatus;
+import vn.edu.iuh.fit.backend.models.Employee;
 
 public class EmployeeRepositories {
 
@@ -44,8 +44,7 @@ public class EmployeeRepositories {
   }
 
   public List<Employee> getAllEmployee() {
-    return entityManager.createNamedQuery("Employee.findAll", Employee.class)
-        .setParameter("status", EmployeeStatus.ACTIVE).getResultList();
+    return entityManager.createNamedQuery("Employee.findAll", Employee.class).setParameter("status",EmployeeStatus.ACTIVE).getResultList();
   }
 
   public Optional<Employee> findById(long id) {

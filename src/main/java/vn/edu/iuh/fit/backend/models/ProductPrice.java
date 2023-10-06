@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,10 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import java.sql.Blob;
-import java.sql.Timestamp;
-import org.joda.time.LocalDateTime;
-import org.mariadb.jdbc.client.column.BlobColumn;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "ProductPrice")

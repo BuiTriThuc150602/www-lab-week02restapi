@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.wwwlabweek02restapi;
+package vn.edu.iuh.fit.backend.wwwlabweek02restapi;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

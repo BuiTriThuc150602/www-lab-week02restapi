@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
-import vn.edu.iuh.fit.enums.ProductStatus;
+import vn.edu.iuh.fit.backend.enums.ProductStatus;
 
 @Entity
 @Table(name = "Product")

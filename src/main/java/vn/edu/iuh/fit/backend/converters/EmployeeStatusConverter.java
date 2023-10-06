@@ -1,9 +1,9 @@
-package vn.edu.iuh.fit.converters;
+package vn.edu.iuh.fit.backend.converters;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 import java.util.stream.Stream;
-import vn.edu.iuh.fit.enums.EmployeeStatus;
+import vn.edu.iuh.fit.backend.enums.EmployeeStatus;
 
 @Converter(autoApply = true)
 public class EmployeeStatusConverter implements AttributeConverter<EmployeeStatus, Integer> {

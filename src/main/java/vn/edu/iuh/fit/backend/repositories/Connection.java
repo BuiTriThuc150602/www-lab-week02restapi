@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.repositories;
+package vn.edu.iuh.fit.backend.repositories;
 
 
 import jakarta.persistence.EntityManager;

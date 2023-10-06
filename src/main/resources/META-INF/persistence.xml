@@ -6,13 +6,14 @@
   version="3.0">
   <persistence-unit name="www-lab-week02">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>vn.edu.iuh.fit.models.Customer</class>
-    <class>vn.edu.iuh.fit.models.Employee</class>
-    <class>vn.edu.iuh.fit.models.Product</class>
-    <class>vn.edu.iuh.fit.models.ProductImage</class>
-    <class>vn.edu.iuh.fit.models.ProductPrice</class>
-    <class>vn.edu.iuh.fit.models.OrderDetail</class>
-    <class>vn.edu.iuh.fit.models.Order</class>
+    <class>vn.edu.iuh.fit.backend.models.Customer</class>
+    <class>vn.edu.iuh.fit.backend.models.Employee</class>
+    <class>vn.edu.iuh.fit.backend.models.Product</class>
+    <class>vn.edu.iuh.fit.backend.models.ProductImage</class>
+    <class>vn.edu.iuh.fit.backend.models.ProductPrice</class>
+    <class>vn.edu.iuh.fit.backend.models.OrderDetail</class>
+    <class>vn.edu.iuh.fit.backend.models.Order</class>
+    <class>vn.edu.iuh.fit.backend.converters.EmployeeStatusConverter</class>
 
     <properties>
       <property name="jakarta.persistence.jdbc.driver"
@@ -23,7 +24,7 @@
       <property name="jakarta.persistence.jdbc.user" value="root"/>
       <property name="jakarta.persistence.jdbc.password"
         value="sapassword"/>
-      <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
       <!--show query-->
       <property name="eclipselink.logging.level.sql" value="FINE"/>
       <property name="eclipselink.logging.parameters" value="true"/>
