@@ -1,4 +1,4 @@
-const apiULR = "/www_lab_week02_restapi/api/employee";
+const apiULR = "/api/employee";
 fetch(apiULR)
 .then(response => response.json())
 .then(data => {
