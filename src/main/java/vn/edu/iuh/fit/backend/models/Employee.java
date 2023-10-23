@@ -13,8 +13,6 @@ import java.util.List;
     @NamedQuery(name = "Employee.findAll", query = "select e from Employee e where e.status = :status")
 )
 public class Employee {
-
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "emp_id")

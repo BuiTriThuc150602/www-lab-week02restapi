@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee</title>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/d5a87402bd.js" crossorigin="anonymous"></script>
+  <script src="JS/jquery-3.7.1.min.js"></script>
+  <script src="JS/bootstrap.min.js" defer></script>
+  <script src="JS/header_footer.js"></script>
+  <script src="JS/employee.js" defer></script>
+</head>
+<body>
+<div id="header_container" class="container-fluid" style="height: 70px"></div>
+<div class=" container shadow rounded">
+  <h2 class="text-center"> Employee Manager</h2>
+  <form class="mb-3">
+    <div class="row">
+      <div class="col-10">
+        <input type="text" class="form-control" id="employeeID" placeholder="Find employee by id">
+      </div>
+      <div class="col-2">
+        <button type="button" id="btnSearch" class="form-control btn btn-outline-success"><i
+            class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="table-responsive">
+    <table id="tblEmployee" class="text-center table table-bordered table-hover table-striped ">
+      <thead class="table-info">
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Date Of Birth</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Status</th>
+        <th colspan="2">Action</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
