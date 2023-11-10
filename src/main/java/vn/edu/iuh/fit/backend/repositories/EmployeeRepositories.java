@@ -44,7 +44,9 @@ public class EmployeeRepositories {
   }
 
   public List<Employee> getAllEmployee() {
-    return entityManager.createNamedQuery("Employee.findAll", Employee.class).setParameter("status",EmployeeStatus.ACTIVE).getResultList();
+    return entityManager.createNamedQuery("Employee.findAll", Employee.class)
+        .setParameter("status1", EmployeeStatus.ACTIVE)
+        .setParameter("status2", EmployeeStatus.IN_ACTIVE).getResultList();
   }
 
   public Optional<Employee> findById(long id) {

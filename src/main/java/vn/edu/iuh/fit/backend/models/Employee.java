@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "Employee")
 @NamedQueries(
-    @NamedQuery(name = "Employee.findAll", query = "select e from Employee e where e.status = :status")
+    @NamedQuery(name = "Employee.findAll", query = "select e from Employee e where e.status = :status1 or e.status = :status2")
 )
 public class Employee {
   @Id

@@ -3,6 +3,7 @@ package vn.edu.iuh.fit.backend.resources;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -36,6 +37,7 @@ public class EmployeeResources {
   public Response findById(@PathParam("id") Long id) {
     Optional<Employee> em = employeeServices.findById(id);
     if (em.isPresent()) {
+      System.out.println(em.get());
       return Response.ok(em.get()).build();
     }
     return Response.status((Status.BAD_REQUEST)).build();
@@ -46,6 +48,14 @@ public class EmployeeResources {
   @Consumes("application/json")
   public Response insertEmployee(Employee employee) {
     employeeServices.insertEmployee(employee);
+    return Response.ok(employee).build();
+  }
+
+  @PUT
+  @Consumes("application/json")
+  @Produces("application/json")
+  public Response updateEmployee(Employee employee) {
+    employeeServices.update(employee);
     return Response.ok(employee).build();
   }
 }

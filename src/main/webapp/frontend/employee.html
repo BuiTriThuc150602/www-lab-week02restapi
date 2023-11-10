@@ -15,7 +15,8 @@
   <script src="JS/employee.js" defer></script>
 </head>
 <body>
-<div id="header_container" class="container-fluid" style="height: 70px"></div>
+<div id="header_container" class="container-fluid" style="height: 70px">
+</div>
 <div class=" container shadow rounded">
   <h2 class="text-center"> Employee Manager</h2>
   <form class="mb-3">
@@ -48,5 +49,58 @@
     </table>
   </div>
 </div>
+<!-- The Update Employee Modal -->
+<div class="modal fade justify-content-center align-items-center" id="updateEmployeeModal"
+     aria-labelledby="updateEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Update <span class="text-info"
+                                                         id="employeeNameUpdate"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="updateEmployeeForm">
+          <input type="hidden" name="em_id" id="em_id">
+          <div class="row mb-3">
+            <div class="col-6">
+              <input type="text" class="form-control" id="fullName">
+            </div>
+            <div class="col-6">
+              <input type="date" class="form-control" id="dob">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <input type="text" class="form-control " id="email">
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control " id="phone">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <input type="text" class="form-control " id="address">
+            </div>
+            <div class="col-6">
+              <select name="status" id="status" class="form-select ">
+                <option value="ACTIVE">Active</option>
+                <option value="IN_ACTIVE">In Active</option>
+                <option value="TERMINATE">Terminate</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-success" id="saveEmployeeChanges">Save
+          Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
